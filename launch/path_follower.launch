@@ -1,0 +1,7 @@
+<launch>
+
+    <include file="$(find turtlebot3_gazebo)/launch/turtlebot3_empty_world.launch" />
+    <!-- <node name="follow_path" pkg="turtle_pkg" type="follow_path.py" output="screen"/>  -->
+    <node name="path_publisher" pkg="turtle_pkg" type="path_publisher.py" args="$(find turtle_pkg)/config" output="screen"/> 
+    <node type="rviz" name="rviz" pkg="rviz" args="-d $(find turtle_pkg)/config/path_world.rviz" />
+</launch>
